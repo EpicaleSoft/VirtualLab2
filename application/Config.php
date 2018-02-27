@@ -9,7 +9,7 @@
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT','default');
 define('BASE_URL','http://localhost:8080/lab/');
-define('APP_NAME','Virtual Lab');
+define('APP_NAME','Mela Lab');
 define('APP_SLOGAN','by EpicaleSoft');
 define('APP_COMPANY','EpicaleSoft');
 define('COMPANY_TELEPHONE','+000 0000 - 0000');
