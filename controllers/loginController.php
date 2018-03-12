@@ -25,52 +25,24 @@ class loginController extends Controller
         //$niveluser;
         if($this->getInt('enviar')==1){
             $this->_view->datos=$_POST;
-            if(!$this->getAlphaNum('mUsuario')){
-                $this->_view->_error='Usuario no válido';
-                $this->_view->renderizar('index','login');
-                exit;
-            }
-            if(!$this->getSql('mPassword')){
-                $this->_view->_error='Contraseña no válida';
-                $this->_view->renderizar('index','login');
-                exit;
-            }
 
-            /*while($row = $this->_login->getUser(
-                $this->getAlphaNum('mUsuario'),
-                $this->getSql('mPassword'))->fetch_array()){
-                $niveluser=$row['nombre'];
-            }*/
-            /*if(($this->_login->getUser($this->getAlphaNum('mUsuario'),
-                $this->getSql('mPassword')))){
-                Sessions::set('autenticado',true);
-                Sessions::set('tiempo',time());
-
-            }else{
-                $this->_view->_error = 'Usuario y/o Contraseña incorrecto.' . $this->getSql('mPassword') ;
-                $this->_view->renderizar('index', 'login');
-                exit;
-            }*/
             $this->_login->getUser(
-                $this->getAlphaNum('mUsuario'),
-                $this->getSql('mPassword'));
-
+                $this->getInt('mPin'));
             if(!Sessions::get('level')){
-                $this->_view->_error = 'Usuario y/o Contraseña incorrecto.' . $this->getSql('mPassword') ;
+                //$this->_view->_error = 'Usuario y/o Contraseña incorrecto.' . $this->getSql('mPassword') ;
                 $this->_view->renderizar('index', 'login');
                 exit;
             }
-            /*if(!$row){
-                $this->_view->_error = 'Usuario y/o Contraseña incorrecto.';
-                $this->_view->renderizar('index', 'login');
-                //exit;
-            }*/
+
             Sessions::set('autenticado',true);
-            //Sessions::set('level',$niveluser);
-            //Sessions::set('level',$row['nombre']);
             Sessions::set('tiempo',time());
-            $this->redireccionar('index');
-            //print_r($_SESSION);
+            if (Sessions::get('id_cliente')>0){
+                $this->redireccionar('resultados','index');
+            }
+            else{
+                $this->redireccionar('index');
+            }
+
         }
 
         $this->_view->renderizar('index','login');

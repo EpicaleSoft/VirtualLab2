@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title"><?php echo $this->titulo;?></h3>
+
+                <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                         <div class="input-group-btn">
+                            <a class="btn btn-success" href="" ><i class="fa fa-plus"></i> Añadir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <?php if(isset($this->examenes)&& count($this->examenes)):?>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody><tr>
+                        <th>Codigo</th>
+                        <th>Descripción</th>
+                        <th></th>
+                    </tr>
+                    <?php for($i=0;$i<count($this->examenes);$i++):?>
+                    <tr>
+                        <td><?php echo $this->examenes[$i]['Codigo'];?></td>
+                        <td><?php echo $this->examenes[$i]['Descripcion'];?></td>
+                        <?php if( $this->examenes[$i]['Habilitado']==false):?>
+                            <td><a class="btn btn-warning" href="#" disabled>Editar <span class="pull-right-container">  <small class="label pull-right bg-red">N/A</small></span></a></td>
+                        <?php else:?>
+                            <td><a class="btn btn-warning" href="<?php echo BASE_URL.'examenes/edittipo/'. $this->examenes[$i]['Id_Tipo_Examen'];?>">Editar</a> </td>
+                        <?php endif;?>
+                    <?php endfor;?>
+                    </tbody></table>
+            </div>
+            <?php else:?>
+                <h5>No hay datos para mostrar.</h5>
+            <?php endif;?>
+            <!-- /.box-body -->
+            <script>
+                $('.disabled').click(function(e){
+                    e.preventDefault();
+                })
+            </script>
+        </div>
+        <!-- /.box -->
+    </div>
+</div>

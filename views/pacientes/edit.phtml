@@ -1,0 +1,85 @@
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Datos Generales</h3>
+        </div>
+        <div class="box-body">
+            <form id="frmAdd" name="frmAdd" method="post" action="<?php echo BASE_URL . 'pacientes/edit/'. $this->id;?>">
+                <input type="hidden" name="guardar" value="1"/>
+                <div class="form-group">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" placeholder="Nombres" name="mNombres"
+                           value="<?php if (isset($this->datos['primer_nombre'])) echo $this->datos['primer_nombre']; ?>">
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" class="form-control" placeholder="Apellido" name="mApellido" value="<?php echo$this->datos['segundo_nombre'];?>">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>DNI</label>
+                        <input type="text" class="form-control" placeholder="Documento de Identidad" name="mDni" value="<?php echo$this->datos['dni'];?>">
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Tipo</label>
+                        <select class="form-control" id="mTipo" name="mTipo">
+                            <?php if(isset($this->tipospac)&& count($this->tipospac)):?>
+                                <?php for($i=0;$i<count($this->tipospac);$i++):?>
+                                    <option  value="<?php echo $this->tipospac[$i]['id_tipo'];?>"
+                                        <?php if(isset($this->datos['mTipo'])){
+                                            if($this->tipospac[$i]['id_tipo'] == $this->datos['tipo']) {
+                                                echo "selected='selected'";
+                                            }
+                                        };?>>
+                                        <?php echo $this->tipospac[$i]['descripcion'];?></option>
+                                <?php endfor;?>
+                            <?php endif;?>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Sexo</label>
+                        <select class="form-control" id="mSexo" name="mSexo">
+                            <?php if(isset($this->tiposexo)&& count($this->tiposexo)):?>
+                                <?php for($i=0;$i<count($this->tiposexo);$i++):?>
+                                    <option  value="<?php echo $this->tiposexo[$i]['valor'];?>"
+                                        <?php if(isset($this->datos['sexo'])){
+                                            if($this->tiposexo[$i]['valor'] == $this->datos['sexo']) {
+                                                echo "selected='selected'";
+                                            }
+                                        };?>>
+                                        <?php echo $this->tiposexo[$i]['descripcion'];?></option>
+                                <?php endfor;?>
+                            <?php endif;?>
+                        </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="text" class="form-control" id="datepicker" name="datepicker" value="<?php echo$this->datos['fecha_nacimiento'];?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Direccion</label>
+                    <input type="text" class="form-control" placeholder="Direccion del domicilio" name="mDir" value="<?php echo$this->datos['direccion'];?>">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" placeholder="Telefono" name="mTel" value="<?php echo$this->datos['telefono'];?>">
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Email</label>
+                        <input type="text" class="form-control" placeholder="Correo Electrónico" name="mMail" value="<?php echo$this->datos['correo'];?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a class="btn btn-warning" href="<?php echo BASE_URL?>pacientes">Cancelar</a>
+                </div>
+            </form>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>

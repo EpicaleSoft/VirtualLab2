@@ -63,8 +63,8 @@ class Sessions{
     }
     public static function getLevel($level){
         $role['Administrador']=3;
-        $role['Gerente']=2;
-        $role['Digitador']=1;
+        $role['Usuario']=2;
+        $role['Cliente']=1;
 
         if(!array_key_exists($level,$role)){
             throw new Exception('Error de acceso');

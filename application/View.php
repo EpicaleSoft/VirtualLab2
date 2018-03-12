@@ -46,10 +46,6 @@ class View
             'ruta_img' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/img/',
             'ruta_plugin' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/plugin/',
             'ruta_addon' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/addon/',
-            'ruta_revs_css' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/revs/css/',
-            'ruta_revs_fonts' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/revs/fonts/',
-            'ruta_revs_js' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/revs/js/',
-            'ruta_revs_assets' => BASE_URL . 'views/layouts/'. DEFAULT_LAYOUT . '/revs/assets/',
             'menu'=>$menu,
             'JS'=> $js
         );

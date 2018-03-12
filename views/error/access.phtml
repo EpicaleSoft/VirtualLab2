@@ -1,5 +1,5 @@
 <div class="error-page">
-    <h2 class="headline text-red"><?php echo $this->titulo ?></h2>
+
     <div class="error-content" style="margin-left: 20%;">
         <h2><i class="fa fa-warning text-red"></i> <?php if($this->mensaje) echo $this->mensaje;?></h2>
         <?php if(!Sessions::get('autenticado')):?>

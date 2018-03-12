@@ -21,20 +21,15 @@
     <script src=<?php echo $_layoutParams['ruta_js']."jquery.table2excel.min.js"?>></script>
     <!-- Font Favicon -->
     <!--<link rel="shortcut icon" href="images/favicon.ico">-->
-
+    <link rel="shortcut icon" href="<?php echo $_layoutParams['ruta_img']?>Lock.png">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
     <script src=<?php echo $_layoutParams['ruta_js']."html5shiv.js;"?></script>
     <script src=<?php echo $_layoutParams['ruta_js']."respond.min.js;"?></script>
     <![endif]-->
-    <?php if(isset($_layoutParams['JS']) && count($_layoutParams['JS'])):?>
-        <?php for($i=0;$i<count($_layoutParams['JS']);$i++):?>
-            <script src="<?php echo $_layoutParams['JS'][$i];?>" type="text/javascript"></script>
-        <?php endfor;?>
-    <?php endif;?>
     <!--headerIncludes-->
 </head>
-<body>
+<body class="sidebar-mini pace-done skin-blue sidebar-collapse">
 <!--begin top-intro -->
 <!--Header-part-->
 <div id="header">

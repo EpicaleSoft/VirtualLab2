@@ -12,11 +12,10 @@ class loginModel extends Model
         parent::__construct();
     }
 
-    public function getUser($user, $pass){
+    public function getUser($pin){
         $con=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-        $querystr=("SELECT * FROM usuario inner join roles on roles.id = usuario.id_rol".
-            " WHERE login ='$user'".
-            "and password ='$pass'");
+        $querystr=("SELECT * FROM usuarios ".
+            " WHERE pin ='$pin' AND estado=1");
         if($con->connect_errno>0){
            die( Sessions::set('error',$con->connect_error));
         }
@@ -30,7 +29,13 @@ class loginModel extends Model
 
         if($post = $con->query($querystr)){
             while($row = $post->fetch_array()){
-            Sessions::set('level',$row["nombre"]);
+            Sessions::set('level',$row["rol"]);
+                if ($row["id_cliente"]>0){
+                    Sessions::set('id_cliente',$row["id_cliente"]);
+                }
+                else{
+                    Sessions::set('nombres',$row["nombres"]);
+                }
             }
         }
 
