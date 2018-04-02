@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e447feb3-d7d5-4d97-8851-833194e85696" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/models/resultadosModel.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/layouts/default/img/LogClin.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/login/backend.phtml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/resultados/download.phtml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/resultados/upload.phtml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/application/Sessions.php" afterPath="$PROJECT_DIR$/application/Sessions.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/examenesController.php" afterPath="$PROJECT_DIR$/controllers/examenesController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/indexController.php" afterPath="$PROJECT_DIR$/controllers/indexController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/loginController.php" afterPath="$PROJECT_DIR$/controllers/loginController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/pacientesController.php" afterPath="$PROJECT_DIR$/controllers/pacientesController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/resultadosController.php" afterPath="$PROJECT_DIR$/controllers/resultadosController.php" />
-      <change beforePath="$PROJECT_DIR$/models/examenesModel.php" afterPath="$PROJECT_DIR$/models/examenesModel.php" />
-      <change beforePath="$PROJECT_DIR$/models/loginModel.php" afterPath="$PROJECT_DIR$/models/loginModel.php" />
-      <change beforePath="$PROJECT_DIR$/models/pacientesModel.php" afterPath="$PROJECT_DIR$/models/pacientesModel.php" />
-      <change beforePath="$PROJECT_DIR$/views/error/access.phtml" afterPath="$PROJECT_DIR$/views/error/access.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/error/index.phtml" afterPath="$PROJECT_DIR$/views/error/index.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/examenes/cargadatos.phtml" afterPath="$PROJECT_DIR$/views/examenes/cargadatos.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/index/index.phtml" afterPath="$PROJECT_DIR$/views/index/index.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/default/css/AdminLTE.css" afterPath="$PROJECT_DIR$/views/layouts/default/css/AdminLTE.css" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/default/css/AdminLTE.min.css" afterPath="$PROJECT_DIR$/views/layouts/default/css/AdminLTE.min.css" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/default/header2.php" afterPath="$PROJECT_DIR$/views/layouts/default/header2.php" />
-      <change beforePath="$PROJECT_DIR$/views/login/index.phtml" afterPath="$PROJECT_DIR$/views/login/index.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/pacientes/index.phtml" afterPath="$PROJECT_DIR$/views/pacientes/index.phtml" />
-      <change beforePath="$PROJECT_DIR$/views/pacientes/nuevo.phtml" afterPath="$PROJECT_DIR$/views/pacientes/nuevo.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -207,7 +183,7 @@
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-54" />
     <option name="y" value="266" />
     <option name="width" value="1377" />
@@ -399,7 +375,7 @@
     <option name="totallyTimeSpent" value="117617000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
