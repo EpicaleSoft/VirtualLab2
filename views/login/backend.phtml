@@ -19,15 +19,10 @@
         <form name="mfrmlogin" id="mfrmlogin" class="lockscreen-credentials" method="post" action="">
             <div class="input-group">
                 <input type="hidden" name="enviar" value="1"/>
-                <input type="password" class="form-control" placeholder="Cedula" name="mPin" id="mPin" value="<?php if (isset($this->datos)) echo $this->datos['mPin']; ?>">
-
-            </div>
-            <div class="input-group">
-                <input type="hidden" name="enviar" value="1"/>
-                <input type="password" class="form-control" placeholder="PIN" name="mPin2" id="mPin2" value="<?php if (isset($this->datos)) echo $this->datos['mPin2']; ?>">
+                <input type="password" class="form-control" placeholder="PIN" name="mPin" id="mPin" value="<?php if (isset($this->datos)) echo $this->datos['mPin']; ?>">
 
                 <div class="input-group-btn">
-                    <input type="submit" class="btn" value=""><i class="fa fa-arrow-right text-muted"></i></input>
+                    <button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
                 </div>
             </div>
         </form>
@@ -35,8 +30,7 @@
     </div>
     <!-- /.lockscreen-item -->
     <div class="help-block text-center">
-        Use sus credenciales<p>
-        <a href="<?php echo BASE_URL.'login/backend';?>">Plataforma de Administración</a>
+        Use sus credenciales
     </div>
     <div class="lockscreen-footer text-center">
         Copyright © <?php echo date("Y"); ?> <b><a href="http://laboratorioleysa.com/" class="text-black"><?php echo APP_COMPANY;?></a></b><br>

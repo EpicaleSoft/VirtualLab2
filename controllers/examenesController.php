@@ -24,10 +24,19 @@ class examenesController extends Controller {
     }
     public function cargadatos(){
         Sessions::acceso('Usuario');
-        $this->_view->examenes = $this->_examenes->getExamenesTipos();
+        $this->_view->pacientes = $this->_examenes->getPacientes();
         $this->_view->titulo = 'Carga de Datos';
         $this->_view->tagline = APP_SLOGAN;
         $this->_view->company = APP_COMPANY;
         $this->_view->renderizar('cargadatos');
+    }
+
+    public function carganuevo($id){
+        Sessions::acceso('Usuario');
+        //$this->_view->pacientes = $this->_examenes->getPacientes();
+        $this->_view->titulo = 'Carga de Datos';
+        $this->_view->tagline = APP_SLOGAN;
+        $this->_view->company = APP_COMPANY;
+        $this->_view->renderizar('carganuevo');
     }
 }

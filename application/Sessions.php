@@ -39,14 +39,14 @@ class Sessions{
     }
     public static function acceso($level){
         if(!Sessions::get('autenticado')){
-            header('location: '. BASE_URL .'error/access/5050');
+            header('location: '. BASE_URL .'login');
             exit;
         }
 
         Sessions::tiempo();
 
         if(Sessions::getLevel($level)>Sessions::getLevel(Sessions::get('level'))){
-            header('location: '. BASE_URL .'error/access/5050');
+            header('location: '. BASE_URL .'login');
             exit;
         }
     }

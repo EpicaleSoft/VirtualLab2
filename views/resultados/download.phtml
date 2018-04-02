@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title"><?php echo $this->titulo;?></h3>
+
+                <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <div class="input-group-btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <?php if(isset($this->resultadosfiles)&& count($this->resultadosfiles)):?>
+                <div class="box-body table-responsive no-padding">
+                    <table id="tablemain" class="table table-bordered table-hover">
+                        <thead><tr>
+                            <th>Fecha</th>
+                            <th>Descripcion</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php for($i=0;$i<count($this->resultadosfiles);$i++):?>
+                        <tr>
+                            <td><?php echo date_format(new DateTime($this->resultadosfiles[$i]['fecha']),"d/m/y");?></td>
+                            <td><?php echo $this->resultadosfiles[$i]['titulo'];?></td>
+                            <td><a class="btn btn-warning" href="<?php echo BASE_URL.'resultados/getfile/'. $this->resultadosfiles[$i]['id_resultado'];?>">Descargar</a> </td>
+                            <?php endfor;?>
+                        </thead></table>
+                </div>
+            <?php else:?>
+                <h5>No hay datos para mostrar.</h5>
+            <?php endif;?>
+        </div>
+        <!-- /.box -->
+    </div>
+</div>

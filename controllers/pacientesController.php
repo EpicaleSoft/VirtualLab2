@@ -25,6 +25,14 @@ class pacientesController extends Controller{
     public function nuevo(){
         Sessions::acceso('Usuario');
 
+        $i = 0; //counter
+        $pin = ""; //our default pin is blank.
+        while($i < 6){
+            //generate a random number between 0 and 9.
+            $pin .= mt_rand(0, 9);
+            $i++;
+        }
+
         $this->_view->setJs(array('nuevo'));
 
         $this->_view->titulo="Agregar Paciente";
@@ -32,7 +40,7 @@ class pacientesController extends Controller{
         $this->_view->company=APP_COMPANY;
         $this->_view->tipospac = $this->_pacientes->getTiposPacientes();
         $this->_view->tiposexo = $this->_pacientes->getGenerales(1);
-
+        $this->_view->pin=$pin;
         if($this->getInt('guardar')==1)
         {
             $this->_view->datos=$_POST;
@@ -52,7 +60,8 @@ class pacientesController extends Controller{
                 $this->getInt('mTipo'),
                 $this->getTexto('mTel'),
                 $this->getTexto('datepicker'),
-                $this->getTexto('mMail')
+                $this->getTexto('mMail'),
+                $pin
             );
 
             $this->redireccionar('pacientes');

@@ -13,6 +13,10 @@ class indexController extends Controller
     }
 
     public function index(){
+
+        if(Sessions::get('level')=='Cliente'){
+            $this->redireccionar('resultados/download');
+        }
         Sessions::acceso('Usuario');
         $this->_view->titulo=APP_NAME;
         $this->_view->tagline=APP_SLOGAN;

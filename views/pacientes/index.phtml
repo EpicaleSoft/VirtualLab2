@@ -19,6 +19,7 @@
                 <table id="tablemain" class="table table-bordered table-hover">
                     <thead><tr>
                         <th>Codigo</th>
+                        <th>PIN</th>
                         <th>Nombres</th>
                         <th>Apellido</th>
                         <th>Identificacion</th>
@@ -31,6 +32,7 @@
                     <?php for($i=0;$i<count($this->pacientes);$i++):?>
                     <tr>
                         <td><?php echo $this->pacientes[$i]['id_cliente'];?></td>
+                        <td><?php echo $this->pacientes[$i]['pin'];?></td>
                         <td><?php echo $this->pacientes[$i]['primer_nombre'];?></td>
                         <td><?php echo $this->pacientes[$i]['segundo_nombre'];?></td>
                         <td><?php echo $this->pacientes[$i]['dni'];?></td>

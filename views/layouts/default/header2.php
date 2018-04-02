@@ -89,7 +89,8 @@
         </nav>
     </header>
     <?php if(Sessions::get('autenticado')):?>
-    <!-- Left side column. contains the logo and sidebar -->
+    <?php if(Sessions::get('level')=='Administrador'):?>
+        <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
@@ -102,7 +103,7 @@
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-files-o"></i>
-                        <span>Clientes</span>
+                        <span>Pacientes</span>
                         <span class="pull-right-container">
                     </a>
                     <ul class="treeview-menu">
@@ -127,6 +128,7 @@
         </section>
         <!-- /.sidebar -->
     </aside>
+    <?php endif;?>
     <?php endif;?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="padding-bottom: 25%;">

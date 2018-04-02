@@ -14,7 +14,7 @@ class pacientesModel extends Model
     }
 
     public function getPacientes(){
-        $post = $this->_db->query("SELECT b.id_cliente, b.primer_nombre, b.segundo_nombre, b.dni,
+        $post = $this->_db->query("SELECT b.id_cliente,b.pin, b.primer_nombre, b.segundo_nombre, b.dni,
    c.descripcion sexo, b.direccion,a.descripcion tipo, b.telefono, b.fecha_nacimiento
 FROM clientes b
   INNER JOIN tipos_pacientes a ON a.id_tipo = b.tipo
@@ -39,10 +39,10 @@ FROM generales WHERE tipo =$mTipo ");
         return $post->fetchAll();
     }
 
-    public function insertPaciente($primer_nombre ,$segundo_nombre ,$dni ,$sexo ,$direccion ,$tipo ,$telefono ,$fecha_nacimiento, $correo)
+    public function insertPaciente($primer_nombre ,$segundo_nombre ,$dni ,$sexo ,$direccion ,$tipo ,$telefono ,$fecha_nacimiento, $correo,$pin)
     {
-        $this->_db->prepare("INSERT INTO clientes(  primer_nombre ,segundo_nombre ,dni ,sexo ,direccion ,tipo ,telefono ,fecha_nacimiento, correo)
-VALUES(:primer_nombre ,:segundo_nombre ,:dni ,:sexo ,:direccion ,:tipo ,:telefono ,CAST(:fecha_nacimiento AS DATE ), :correo)")
+        $this->_db->prepare("INSERT INTO clientes(  primer_nombre ,segundo_nombre ,dni ,sexo ,direccion ,tipo ,telefono ,fecha_nacimiento, correo, pin)
+VALUES(:primer_nombre ,:segundo_nombre ,:dni ,:sexo ,:direccion ,:tipo ,:telefono ,CAST(:fecha_nacimiento AS DATE ), :correo, :pin)")
             ->execute(array(
                 ':primer_nombre'=>$primer_nombre,
                 ':segundo_nombre'=>$segundo_nombre,
@@ -52,7 +52,8 @@ VALUES(:primer_nombre ,:segundo_nombre ,:dni ,:sexo ,:direccion ,:tipo ,:telefon
                 ':tipo'=>$tipo,
                 ':telefono'=>$telefono,
                 ':fecha_nacimiento'=>$fecha_nacimiento,
-                ':correo'=>$correo
+                ':correo'=>$correo,
+                ':pin'=>$pin
             ));
     }
 

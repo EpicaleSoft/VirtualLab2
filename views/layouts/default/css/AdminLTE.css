@@ -25,8 +25,6 @@ body {
 }
 /* Layout */
 .wrapper {
-  -webkit-padding-start: 0px;
-  padding-left: 0px;
   height: 100%;
   position: relative;
   overflow-x: hidden;
@@ -3333,7 +3331,7 @@ table.text-center th {
 .lockscreen-wrapper {
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 0%;
 }
 /* User name [optional] */
 .lockscreen .lockscreen-name {
